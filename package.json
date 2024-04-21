@@ -10,7 +10,7 @@
     "test": "hardhat compile && hardhat test",
     "coverage": "nyc npm run test",
     "build": "vite build",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.mdx ./src"
+    "lint": "export ESLINT_USE_FLAT_CONFIG=false && eslint --ext .js,.jsx,.ts,.tsx,.json,.mdx ./src"
   },
   "files": [
     "dist/*"
