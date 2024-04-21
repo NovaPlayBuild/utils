@@ -1,0 +1,42 @@
+{
+  "name": "@hyperplay/utils",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "codecheck": "tsc --noEmit",
+    "prettier": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "test": "hardhat compile && hardhat test",
+    "coverage": "nyc npm run test",
+    "build": "vite build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.mdx ./src"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "keywords": [],
+  "author": "Brett Cleary",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^9.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.5",
+    "rollup-plugin-node-externals": "^5.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.8.3"
+  }
+}
