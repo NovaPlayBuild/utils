@@ -26,7 +26,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src/",
     "typeRoots": ["./node_modules", "src/common/typedefs"],
-    "types": ["@types/chrome", "@types/node"],
+    "types": ["@types/chrome", "@types/node", "@types/jest"],
     "strictPropertyInitialization": true
   },
   "include": ["src"],
