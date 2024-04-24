@@ -1,5 +1,7 @@
 import EventEmitter from 'events'
 
+export * from './getAmount'
+
 function getDomainNameFromHostName(url: URL) {
   const domainNameParts = url.hostname.split('.')
   if (domainNameParts.length < 3) return url.hostname
