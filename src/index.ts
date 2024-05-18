@@ -76,7 +76,7 @@ export type MetaMaskInitMethod =
   | 'IMPORT'
   | 'MANUAL_IMPORT'
 
-  export type ImportableBrowser =
+export type ImportableBrowser =
   | 'chrome'
   | 'edge'
   | 'opera'
