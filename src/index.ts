@@ -83,3 +83,20 @@ export type ImportableBrowser =
   | 'brave'
   | 'chromium'
   | 'vivaldi'
+
+export type PackageManager = 'default' | 'flatpak' | 'aur' | 'snap'
+
+export interface BrowserProfile {
+  path: string
+  imagePath: string
+  displayName: string
+  name: string
+  //if user has not uploaded a profile pic for the new profile in chrome,
+  //it will use a given background color and a default icon
+  //color is a hex string
+  imageBackgroundColor?: string
+}
+
+export type MetaMaskImportOptions = Partial<
+  Record<ImportableBrowser, Partial<Record<PackageManager, BrowserProfile[]>>>
+>
