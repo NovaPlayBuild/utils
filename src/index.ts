@@ -35,7 +35,7 @@ export interface HyperPlayAPI {
   openMetaMaskPortfolioPage: () => void
   openMetaMaskSnapsPage: () => void
   setBadgeTextInRenderer: (text: string) => void
-  openUrl: (url: string) => void
+  openUrl: (url: string) => Promise<string | void>
   captureException: (exception: any) => any
   configFolder: string
   appConfigFolder: string
