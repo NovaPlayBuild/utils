@@ -43,6 +43,10 @@ export interface HyperPlayAPI {
   fixAsarPath: (origin: string) => string
   eventsToCloseMetaMaskPopupOn: string[]
   appIconPath: string
+  providerEvents: EventEmitter,
+  returnExtensionRequestEvents: EventEmitter,
+  errorExtensionRequestEvents: EventEmitter,
+  providerRequests: EventEmitter
 }
 
 export type OverlayAction = 'ON' | 'OFF' | 'TOGGLE'
