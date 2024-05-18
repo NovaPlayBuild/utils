@@ -69,3 +69,17 @@ export async function toggleOverlay({
     console.log(`Error in hp overlay toggle ${err}`)
   }
 }
+
+export type MetaMaskInitMethod =
+  | 'CREATE'
+  | 'SECRET_PHRASE'
+  | 'IMPORT'
+  | 'MANUAL_IMPORT'
+
+export type ImportableBrowser =
+  | 'chrome'
+  | 'edge'
+  | 'opera'
+  | 'brave'
+  | 'chromium'
+  | 'vivaldi'
