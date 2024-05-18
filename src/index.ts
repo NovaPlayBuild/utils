@@ -83,7 +83,7 @@ export type ImportableBrowser =
   | 'brave'
   | 'chromium'
   | 'vivaldi'
-  
+
 export type PackageManager = 'default' | 'flatpak' | 'aur' | 'snap'
 
 export interface BrowserProfile {
