@@ -47,6 +47,7 @@ export interface HyperPlayAPI {
   returnExtensionRequestEvents: EventEmitter
   errorExtensionRequestEvents: EventEmitter
   providerRequests: EventEmitter
+  toggleOverlay: ( arg: {action?: OverlayAction} ) => void
 }
 
 export type OverlayAction = 'ON' | 'OFF' | 'TOGGLE'
