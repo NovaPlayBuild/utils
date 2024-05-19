@@ -32,7 +32,7 @@ export interface HyperPlayAPI {
   extensionProvider: any
   getMainWindowId: () => number
   openMetaMaskHomePage: () => void
-  openMetaMaskPortfolioPage: () => void
+  openMetaMaskPortfolioPage: (...args: any) => void
   openMetaMaskSnapsPage: () => void
   setBadgeTextInRenderer: (text: string) => void
   openUrl: (url: string) => Promise<string | void>
@@ -48,6 +48,7 @@ export interface HyperPlayAPI {
   errorExtensionRequestEvents: EventEmitter
   providerRequests: EventEmitter
   toggleOverlay: (arg: { action?: OverlayAction }) => void
+  removePopup: () => void
 }
 
 export type OverlayAction = 'ON' | 'OFF' | 'TOGGLE'
