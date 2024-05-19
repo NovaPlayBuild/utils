@@ -1,6 +1,13 @@
 import EventEmitter from 'events'
+import {
+  ModalText,
+  NOTIFICATION_TYPE,
+  OverlayAction,
+  TxnStateToTranslation
+} from './overlay'
 
 export * from './getAmount'
+export * from './overlay'
 
 function getDomainNameFromHostName(url: URL) {
   const domainNameParts = url.hostname.split('.')
@@ -49,9 +56,16 @@ export interface HyperPlayAPI {
   providerRequests: EventEmitter
   toggleOverlay: (arg: { action?: OverlayAction }) => void
   removePopup: () => void
+  getCurrentWeb3Provider: () => any
+  i18n: {
+    transactions: {
+      TITLE: ModalText
+      DESCRIPTION: TxnStateToTranslation
+      EXTENSION_NOTIFICATION: NOTIFICATION_TYPE
+      INITIAL_TOAST: NOTIFICATION_TYPE
+    }
+  }
 }
-
-export type OverlayAction = 'ON' | 'OFF' | 'TOGGLE'
 
 /**
  * @dev used by @hyperplay/overlay and @hyperplay/extension-helper
