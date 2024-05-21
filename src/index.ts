@@ -38,9 +38,9 @@ export interface HyperPlayAPI {
   logInfo: (msg: string) => void
   extensionProvider: any
   getMainWindowId: () => number
-  openMetaMaskHomePage: () => void
+  openMetaMaskHomePage: (...args: any) => void
   openMetaMaskPortfolioPage: (...args: any) => void
-  openMetaMaskSnapsPage: () => void
+  openMetaMaskSnapsPage: (...args: any) => void
   setBadgeTextInRenderer: (text: string) => void
   openUrl: (url: string) => Promise<string | void>
   captureException: (exception: any) => any
