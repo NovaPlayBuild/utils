@@ -65,6 +65,7 @@ export interface HyperPlayAPI {
       INITIAL_TOAST: NOTIFICATION_TYPE
     }
   }
+  getMetaMaskExtensionId: () => string
 }
 
 /**
