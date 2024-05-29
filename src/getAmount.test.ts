@@ -15,4 +15,20 @@ describe('getAmount util', () => {
     const amt = getAmount(1.5, 18).toString()
     expect(amt).toBe('1500000000000000000')
   })
+
+  test('get amount of fraction with 77 decimals', () => {
+    /* eslint-disable-next-line @typescript-eslint/no-loss-of-precision */
+    const amt = getAmount(1.1579208923731619542357098500868, 77).toString()
+    expect(amt).toBe('1.1579208923731619e+77')
+  })
+
+  test('get amount of fraction with 0 decimals', () => {
+    const amt = getAmount(1, 0).toString()
+    expect(amt).toBe('1')
+  })
+
+  test('get amount of 0 with 0 decimals', () => {
+    const amt = getAmount(0, 0).toString()
+    expect(amt).toBe('0')
+  })
 })
