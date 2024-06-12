@@ -19,7 +19,9 @@ describe('getAmount util', () => {
   test('get amount of fraction with 77 decimals', () => {
     /* eslint-disable-next-line @typescript-eslint/no-loss-of-precision */
     const amt = getAmount(1.1579208923731619542357098500868, 77).toString()
-    expect(amt).toBe('1.1579208923731619e+77')
+    expect(amt).toBe(
+      '115792089237316190000000000000000000000000000000000000000000000000000000000000'
+    )
   })
 
   test('get amount of fraction with 0 decimals', () => {
