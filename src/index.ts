@@ -33,7 +33,7 @@ export async function wait(ms: number) {
 
 export interface HyperPlayAPI {
   backendEvents: EventEmitter
-  updatePopupInOverlay: (show: boolean) => void
+  updatePopupInOverlay: (show: boolean) => Promise<void>
   logError: (msg: string) => void
   logInfo: (msg: string) => void
   extensionProvider: any
@@ -54,8 +54,8 @@ export interface HyperPlayAPI {
   returnExtensionRequestEvents: EventEmitter
   errorExtensionRequestEvents: EventEmitter
   providerRequests: EventEmitter
-  toggleOverlay: (arg: { action?: OverlayAction }) => void
-  removePopup: () => void
+  toggleOverlay: (arg: { action?: OverlayAction }) => Promise<void>
+  removePopup: () => Promise<void>
   getCurrentWeb3Provider: () => any
   i18n: {
     transactions: {
