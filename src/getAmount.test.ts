@@ -1,4 +1,4 @@
-import { getAmount } from './getAmount'
+import { getAmount, getDecimalNumberFromAmount } from './getAmount'
 
 describe('getAmount util', () => {
   test('get amount of 10 with 18 decimals', () => {
@@ -32,5 +32,20 @@ describe('getAmount util', () => {
   test('get amount of 0 with 0 decimals', () => {
     const amt = getAmount(0, 0).toString()
     expect(amt).toBe('0')
+  })
+})
+
+describe.only('getDecimalNumberFromAmount util', () => {
+  test('get amount of 0 with 18 decimals', () => {
+    const amt = getDecimalNumberFromAmount('0', 18).toString()
+    expect(amt).toBe('0')
+  })
+
+  test('get amount of 1000 with 18 decimals', () => {
+    const amt = getDecimalNumberFromAmount(
+      '1000000000000010101010',
+      18
+    ).toString()
+    expect(amt).toBe('1000.00000000001010101')
   })
 })
