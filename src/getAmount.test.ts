@@ -35,7 +35,7 @@ describe('getAmount util', () => {
   })
 })
 
-describe.only('getDecimalNumberFromAmount util', () => {
+describe('getDecimalNumberFromAmount util', () => {
   test('get amount of 0 with 18 decimals', () => {
     const amt = getDecimalNumberFromAmount('0', 18).toString()
     expect(amt).toBe('0')
