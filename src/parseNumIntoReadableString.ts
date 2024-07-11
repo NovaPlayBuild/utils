@@ -81,21 +81,21 @@ export function parseNumIntoReadableString({
   const cutoffValueBN = new BigNumber(maxValue)
   const minValueBN = new BigNumber(minValue)
 
-  const numIsAboveMin = numBN.gt(minValueBN)
-  const numIsBelowMax = numBN.lt(cutoffValueBN)
-  const numIsWithinRange = numIsAboveMin && numIsBelowMax
+  const numIsGteMin = numBN.gte(minValueBN)
+  const numIsLteMax = numBN.lte(cutoffValueBN)
+  const numIsWithinRange = numIsGteMin && numIsLteMax
   if (numIsWithinRange) {
     // Remove trailing zeros and the decimal point if there are no decimals left
     return removeTrailingZeros(numBN.toFixed(4))
   }
 
   // represent small decimal with scientific notation
-  if (!numIsAboveMin) {
-    return removeTrailingZeros(numBN.toPrecision(3))
+  if (!numIsGteMin) {
+    return removeTrailingZeros(numBN.toExponential(2))
   }
 
   // represent large number with abbreviation
-  if (!numIsBelowMax) {
+  if (!numIsLteMax) {
     return formatLargeNumber(num, units, 2)
   }
 

@@ -25,6 +25,16 @@ describe('parseNumIntoReadableString util', () => {
     expect(amt).toBe('0.0001')
   })
 
+  test('parse max value number within range to the same value', () => {
+    const amt = parseNumIntoReadableString({
+      num: '999999999999',
+      units: decimalUnits,
+      minValue: '0.0001',
+      maxValue: '999999999999'
+    })
+    expect(amt).toBe('999999999999')
+  })
+
   test('parse number below 0.0001 to scientific notation', () => {
     const amt = parseNumIntoReadableString({
       num: '0.000000100',
@@ -83,5 +93,15 @@ describe('parseNumIntoReadableString util', () => {
       maxValue: '1000000'
     })
     expect(amt).toBe('1.00e-18')
+  })
+
+  test('min unit256', () => {
+    const amt = parseNumIntoReadableString({
+      num: '0.000001',
+      units: decimalUnits,
+      minValue: '0.0001',
+      maxValue: '999999999999'
+    })
+    expect(amt).toBe('1.00e-6')
   })
 })
