@@ -21,7 +21,7 @@ export function getAmount(amount: string, decimals: number) {
 
 /**
  * @dev note that we pass an integer string to avoid loss of precision when using JS Number
- * @param amount int string (e.g. 1001000000000000000 WETH)
+ * @param amount int string (e.g. 1001000000000000000 wei)
  * @param decimals 10's exponent for smallest unit (i.e. 18 for WETH)
  * @returns amount / 10 ^ decimals as a BigNumber
  */

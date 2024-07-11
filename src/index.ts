@@ -8,6 +8,7 @@ import {
 
 export * from './getAmount'
 export * from './overlay'
+export * from './parseNumIntoReadableString'
 
 function getDomainNameFromHostName(url: URL) {
   const domainNameParts = url.hostname.split('.')
