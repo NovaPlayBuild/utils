@@ -39,14 +39,14 @@ export const formatLargeNumber = (
   decimals: number
 ) => {
   const numBN = new BigNumber(num)
-  let unitIsTooBig = numBN.lt(new BigNumber(units[0].value))
+  const firstUnitIsTooBig = numBN.lt(new BigNumber(units[0].value))
 
-  if (!units.length || unitIsTooBig) {
+  if (!units.length || firstUnitIsTooBig) {
     return num
   }
 
   for (let i = 1; i < units.length; ++i) {
-    let unitIsTooBig = numBN.lt(new BigNumber(units[i].value))
+    const unitIsTooBig = numBN.lt(new BigNumber(units[i].value))
     if (unitIsTooBig) {
       const prevUnit = units[i - 1]
       const prevUnitValue = new BigNumber(prevUnit.value)
