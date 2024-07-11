@@ -91,7 +91,7 @@ export function parseNumIntoReadableString({
 
   // represent small decimal with scientific notation
   if (!numIsGteMin) {
-    return removeTrailingZeros(numBN.toPrecision(3))
+    return removeTrailingZeros(numBN.toExponential(2))
   }
 
   // represent large number with abbreviation

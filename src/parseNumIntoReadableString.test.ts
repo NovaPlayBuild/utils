@@ -94,4 +94,14 @@ describe('parseNumIntoReadableString util', () => {
     })
     expect(amt).toBe('1.00e-18')
   })
+
+  test('min unit256', () => {
+    const amt = parseNumIntoReadableString({
+      num: '0.000001',
+      units: decimalUnits,
+      minValue: '0.0001',
+      maxValue: '999999999999'
+    })
+    expect(amt).toBe('1.00e-6')
+  })
 })
