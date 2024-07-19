@@ -2,9 +2,9 @@ import {
   getPlayStreakDays,
   GetPlayStreakDaysArgs,
   GetPlayStreakDaysReturn,
-  oneDayInMs
+  oneDayInMs,
+  getPlaytimePercentage
 } from './playstreak'
-import { getPlaytimePercentage } from './playstreak'
 
 describe('get playstreak test', () => {
   describe('getPlaytimePercentage', () => {
