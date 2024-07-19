@@ -47,6 +47,19 @@ describe('get playstreak test', () => {
       })
       expect(percentage).toEqual(0)
     })
+
+    test('add unrecorded playtime', () => {
+      const twoHoursAgo = new Date(Date.now() - 1000 * 3600 * 2).toUTCString()
+      const now = Date.now()
+      jest.useFakeTimers().setSystemTime(new Date(Date.now() + 1000 * 45))
+      const percentage = getPlaytimePercentage({
+        minimumSessionTimeInSeconds: 100,
+        accumulatedPlaytimeTodayInSeconds: 10,
+        lastPlaySessionCompletedDateTimeUTC: twoHoursAgo,
+        dateTimeCurrentSessionStartedInMsSinceEpoch: now
+      })
+      expect(percentage).toEqual(55)
+    })
   })
 
   describe('getPlayStreak', () => {
