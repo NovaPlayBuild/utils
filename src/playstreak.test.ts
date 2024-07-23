@@ -114,6 +114,21 @@ describe('get playstreak test', () => {
         }
       )
     })
+
+    test('8 out of 7 days but 2 days old', () => {
+      const old = new Date(Date.now() - 2 * oneDayInMs).toUTCString()
+      testGetPlaystreakDays(
+        {
+          lastPlaySessionCompletedDateTimeUTC: old,
+          requiredStreakInDays: 7,
+          currentStreakInDays: 8
+        },
+        {
+          currentStreakInDays: 7,
+          requiredStreakInDays: 7
+        }
+      )
+    })
   })
 })
 
