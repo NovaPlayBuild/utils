@@ -43,8 +43,8 @@ export function getPlayStreakDays({
   requiredStreakInDays,
   currentStreakInDays
 }: GetPlayStreakDaysArgs): GetPlayStreakDaysReturn {
-  // if a streak is > required, it will not reset until claim
-  if (currentStreakInDays > requiredStreakInDays) {
+  // if a streak is >= required, it will not reset until claim
+  if (currentStreakInDays >= requiredStreakInDays) {
     return { requiredStreakInDays, currentStreakInDays: requiredStreakInDays }
   }
   if (questWillResetOnNextSession(lastPlaySessionCompletedDateTimeUTC)) {
