@@ -17,4 +17,12 @@ describe('getNumClaimsLeft util', () => {
     })
     expect(amt).toBe('8')
   })
+  test('larger numbers', () => {
+    const amt = getNumClaimsLeft({
+      depositedAmount: '999999999999',
+      withdrawnAmount: '1000000000',
+      amountPerUser: '1000'
+    })
+    expect(amt).toBe('998999999')
+  })
 })
