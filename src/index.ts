@@ -11,6 +11,7 @@ export * from './overlay'
 export * from './parseNumIntoReadableString'
 export * from './playstreak'
 export * from './getNumClaimsLeft'
+export * from './questTypes'
 
 function getDomainNameFromHostName(url: URL) {
   const domainNameParts = url.hostname.split('.')
