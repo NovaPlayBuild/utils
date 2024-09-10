@@ -35,7 +35,7 @@ export async function wait(ms: number) {
   })
 }
 
-export interface HyperPlayAPI {
+export interface NovaPlayAPI {
   backendEvents: EventEmitter
   updatePopupInOverlay: (show: boolean) => Promise<void>
   logError: (msg: string) => void
@@ -82,7 +82,7 @@ export async function toggleOverlay({
   api
 }: {
   action?: OverlayAction
-  api: HyperPlayAPI
+  api: NovaPlayAPI
 }) {
   try {
     api.backendEvents.emit('overlayToggled', action)
