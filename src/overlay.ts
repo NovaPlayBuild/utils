@@ -22,7 +22,7 @@ export interface OverlayRenderState {
   showBackgroundTint: boolean
 }
 
-export type Runner = 'legendary' | 'gog' | 'sideload' | 'hyperplay'
+export type Runner = 'legendary' | 'gog' | 'sideload' | 'novaplay'
 
 export interface ExtensionStateInterface {
   isPopupOpen: boolean
@@ -68,7 +68,7 @@ export type Transaction = {
 
 export type TransactionMap = Map<number, Transaction>
 
-// todo: import into hyperplay/ui package
+// todo: import into novaplay/ui package
 export type statusType =
   | 'pending'
   | 'submitted'
