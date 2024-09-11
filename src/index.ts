@@ -73,7 +73,7 @@ export interface NovaPlayAPI {
 }
 
 /**
- * @dev used by @hyperplay/overlay and @hyperplay/extension-helper
+ * @dev used by @novaplay/overlay and @novaplay/extension-helper
  * @notice toggles the browser game and desktop game overlays
  * @param action optionally overrides the overlay shown state instead of toggling
  */
